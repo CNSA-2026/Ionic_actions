@@ -15,7 +15,7 @@
   "forwardPorts": [4200, 8100],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y chromium chromium-driver && npm install",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y chromium chromium-driver && npm install && npx cypress install",
   "containerEnv": {
     "CHROME_BIN": "/usr/bin/chromium"
   },
