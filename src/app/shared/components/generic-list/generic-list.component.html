@@ -1,0 +1,15 @@
+<ion-list>
+  @for (item of items(); track item.name) {
+    <ion-item
+      [routerLink]="
+        linkPrefix() && item.id ? linkPrefix()! + '/' + item.id : null
+      "
+    >
+      <ion-icon [name]="icon()" slot="start"></ion-icon>
+      <ion-label>
+        <ion-text class="item-name">{{ item.name }}</ion-text>
+        <ion-note class="item-description">{{ item.description }}</ion-note>
+      </ion-label>
+    </ion-item>
+  }
+</ion-list>

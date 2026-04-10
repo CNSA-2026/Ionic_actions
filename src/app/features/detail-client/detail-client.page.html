@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tabClients"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Client Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed class="detail-page">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-grid class="identity-grid">
+              <ion-row class="ion-align-items-center">
+                <ion-col size="auto">
+                  <ion-icon
+                    name="person-circle-outline"
+                    class="profile-icon"
+                  ></ion-icon>
+                </ion-col>
+                <ion-col>
+                  <ion-card-title>{{ client.name }}</ion-card-title>
+                  <ion-card-subtitle
+                    >{{ client.tier }} client</ion-card-subtitle
+                  >
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-chip color="success">Active</ion-chip>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-list inset="true" class="list-separated">
+          <ion-item>
+            <ion-label>
+              <ion-text class="field-label">Client ID</ion-text>
+              <ion-text class="field-value">{{ id }}</ion-text>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <ion-text class="field-label">Category</ion-text>
+              <ion-text class="field-value">{{ client.tier }}</ion-text>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

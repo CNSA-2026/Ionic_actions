@@ -1,0 +1,92 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tabReservations"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Reservation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed class="reservation-page">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="form-card">
+          <ion-card-content>
+            <ion-list lines="full" class="list-separated">
+              <ion-item>
+                <ion-icon slot="start" name="person-outline"></ion-icon>
+                <ion-label position="stacked">Reservation Name</ion-label>
+                <ion-input
+                  value="John Perez"
+                  placeholder="Client full name"
+                ></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon slot="start" name="people-outline"></ion-icon>
+                <ion-label position="stacked">Number of People</ion-label>
+                <ion-input
+                  type="number"
+                  min="1"
+                  value="4"
+                  placeholder="Number of guests"
+                ></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon slot="start" name="location-outline"></ion-icon>
+                <ion-label position="stacked">Preferred Setting</ion-label>
+                <ion-select value="terrace" placeholder="Select area">
+                  @for (location of locations; track location.value) {
+                  <ion-select-option [value]="location.value"
+                    >{{ location.label }}</ion-select-option
+                  >
+                  }
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="preview-card" color="light">
+          <ion-card-content>
+            <ion-text class="preview-row">
+              <ion-text class="preview-key">Name:</ion-text>
+              <ion-text class="preview-value"
+                >{{ reservationPreview.customerName }}</ion-text
+              >
+            </ion-text>
+            <ion-text class="preview-row">
+              <ion-text class="preview-key">Guests:</ion-text>
+              <ion-text class="preview-value"
+                >{{ reservationPreview.peopleCount }}</ion-text
+              >
+            </ion-text>
+            <ion-text class="preview-row">
+              <ion-text class="preview-key">Area:</ion-text>
+              <ion-text class="preview-value"
+                >{{ reservationPreview.preferredArea }}</ion-text
+              >
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-back-button
+          defaultHref="/tabs/tabReservations"
+          text="Create Reservation"
+          class="custom-back-btn"
+          icon="calendar-outline"
+        ></ion-back-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

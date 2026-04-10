@@ -1,0 +1,222 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+/* @import '@ionic/angular/css/palettes/dark.system.css'; */
+
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&display=swap");
+
+ion-content {
+  --background: linear-gradient(
+    180deg,
+    var(--ion-color-light) 0%,
+    var(--ion-color-light-accent) 100%
+  );
+}
+
+ion-toolbar {
+  --background: rgba(248, 246, 246, 0.92);
+  --border-color: var(--ion-primary-14);
+  --color: var(--ion-color-dark);
+  --min-height: 64px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  backdrop-filter: blur(8px);
+}
+
+ion-title {
+  color: var(--ion-color-dark);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+ion-card {
+  border-radius: var(--ion-radius-xl);
+}
+
+ion-back-button.custom-back-btn,
+ion-button {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+ion-list {
+  --background: transparent;
+  --ion-item-background: transparent;
+}
+
+.page-shell {
+  padding-top: 10px;
+  padding-bottom: 22px;
+}
+
+.tab-page,
+.detail-page,
+.reservation-page {
+  padding: 10px 0 22px;
+}
+
+ion-back-button.custom-back-btn,
+ion-button[expand="block"] {
+  margin-top: 14px;
+  --border-radius: var(--ion-radius-lg);
+  --box-shadow: 0 14px 24px var(--ion-primary-28);
+  height: 48px;
+}
+
+ion-back-button.custom-back-btn {
+  display: block;
+  width: 100%;
+  --background: var(--ion-color-primary);
+  --color: #fff;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+
+.list-separated {
+  display: grid;
+  gap: 6px;
+  background: transparent;
+}
+
+.list-separated ion-item {
+  --background: var(--list-item-bg, var(--ion-white-72));
+  --border-color: transparent;
+  --padding-start: var(--list-item-padding-start, 16px);
+  --inner-padding-end: var(--list-item-inner-padding-end, 16px);
+  --inner-border-width: 0;
+  margin-bottom: 0;
+  border: 1px solid var(--ion-primary-12);
+  border-radius: var(--ion-radius-sm);
+}
+
+.login-card {
+  border-radius: var(--ion-radius-2xl);
+  border: 1px solid color-mix(in srgb, var(--ion-color-primary) 20%, white);
+  background: var(--ion-gradient-card-warm);
+  box-shadow: var(--ion-shadow-xl);
+}
+
+.form-card,
+.preview-card {
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--ion-color-primary) 22%, white);
+  border-radius: var(--ion-radius-xl);
+  box-shadow: var(--ion-shadow-md);
+}
+
+.form-card {
+  background: var(--ion-gradient-card-soft);
+}
+
+.detail-page ion-card {
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--ion-color-primary) 24%, white);
+  background: var(--ion-gradient-card-accent);
+  box-shadow: var(--ion-shadow-lg);
+}
+
+.summary-card {
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--ion-color-primary) 24%, white);
+  border-radius: var(--ion-radius-xl);
+  background: var(--ion-gradient-card-metric);
+  box-shadow: var(--ion-shadow-md);
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ion-color-medium);
+}
+
+.summary-value {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--ion-color-primary);
+}
+
+app-generic-list .item-name,
+app-generic-list .item-description {
+  display: block;
+}
+
+app-generic-list ion-list {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  display: grid;
+  gap: 6px;
+  padding: 0;
+}
+
+app-generic-list ion-item {
+  --background: var(--generic-list-item-bg, var(--ion-card-background));
+  --border-color: transparent;
+  --padding-start: 14px;
+  --padding-end: 12px;
+  --inner-padding-end: 6px;
+  --inner-border-width: 0;
+  --inner-padding-bottom: 10px;
+  --inner-padding-top: 10px;
+  border: 1px solid var(--ion-primary-12);
+  border-radius: var(--ion-radius-md);
+  box-shadow: var(--ion-shadow-sm);
+}
+
+app-generic-list ion-icon {
+  font-size: 1.45rem;
+  color: var(--ion-color-primary);
+  opacity: 0.9;
+}
+
+app-generic-list .item-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ion-color-dark);
+  letter-spacing: -0.01em;
+}
+
+app-generic-list .item-description {
+  margin-top: 4px;
+  font-size: 0.84rem;
+  color: var(--ion-color-medium);
+}

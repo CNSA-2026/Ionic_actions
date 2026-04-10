@@ -1,0 +1,96 @@
+:root {
+  --ion-font-family: "Epilogue", "Segoe UI", sans-serif;
+
+  --ion-color-primary: #df6020;
+  --ion-color-primary-rgb: 223, 96, 32;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #c4541c;
+  --ion-color-primary-tint: #e27036;
+
+  --ion-color-secondary: #6f4a37;
+  --ion-color-secondary-rgb: 111, 74, 55;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #624130;
+  --ion-color-secondary-tint: #7d5c4b;
+
+  --ion-color-success: #2f9b68;
+  --ion-color-warning: #c6841f;
+  --ion-color-danger: #c3473f;
+
+  --ion-color-light: #f8f6f6;
+  --ion-color-light-rgb: 248, 246, 246;
+  --ion-color-light-contrast: #211611;
+  --ion-color-light-contrast-rgb: 33, 22, 17;
+  --ion-color-light-shade: #dad8d8;
+  --ion-color-light-tint: #f9f7f7;
+  --ion-color-light-muted: #f7f7f7;
+  --ion-color-light-accent: #f2ece8;
+
+  --ion-color-dark: #211611;
+  --ion-color-dark-rgb: 33, 22, 17;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1d130f;
+  --ion-color-dark-tint: #372d29;
+  --ion-color-dark-soft: #5a4337;
+
+  --ion-background-color: #f8f6f6;
+  --ion-background-color-rgb: 248, 246, 246;
+  --ion-item-background: #ffffff;
+  --ion-toolbar-background: #f8f6f6;
+  --ion-card-background: #ffffff;
+  --ion-border-color: rgba(223, 96, 32, 0.15);
+
+  /* Primary opacity scale used across pages/components */
+  --ion-primary-12: rgba(223, 96, 32, 0.12);
+  --ion-primary-24: rgba(223, 96, 32, 0.24);
+  --ion-primary-28: rgba(223, 96, 32, 0.28);
+  --ion-danger-12: rgba(195, 71, 63, 0.12);
+  --ion-danger-strong: #a53b35;
+
+  /* White overlay scale for ion-item backgrounds */
+  --ion-white-72: rgba(255, 255, 255, 0.72);
+  --ion-white-88: rgba(255, 255, 255, 0.88);
+
+  /* Neutral shadows used in cards and list items */
+  --ion-shadow-sm: 0 6px 14px rgba(33, 22, 17, 0.05);
+  --ion-shadow-md: 0 12px 24px rgba(33, 22, 17, 0.08);
+  --ion-shadow-lg: 0 14px 26px rgba(33, 22, 17, 0.09);
+  --ion-shadow-xl: 0 18px 34px rgba(33, 22, 17, 0.12);
+
+  /* Radius scale used by cards, controls and pills */
+  --ion-radius-sm: 10px;
+  --ion-radius-md: 12px;
+  --ion-radius-lg: 13px;
+  --ion-radius-xl: 16px;
+  --ion-radius-2xl: 18px;
+  --ion-radius-pill: 999px;
+
+  /* Existing decorative gradients used by feature pages/components */
+  --ion-gradient-card-warm: linear-gradient(
+    145deg,
+    #fff7f2 0%,
+    #ffffff 58%,
+    #fff0e6 100%
+  );
+  --ion-gradient-card-soft: linear-gradient(
+    145deg,
+    #fff8f4 0%,
+    #ffffff 65%,
+    #fff0e6 100%
+  );
+  --ion-gradient-card-accent: linear-gradient(
+    145deg,
+    #fff7f2 0%,
+    #ffffff 58%,
+    #ffeede 100%
+  );
+  --ion-gradient-card-metric: linear-gradient(
+    140deg,
+    #fff9f5 0%,
+    #ffffff 55%,
+    #fff4ec 100%
+  );
+}

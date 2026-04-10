@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Clients</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed class="tab-page">
+    <ion-row>
+      <ion-col size="12">
+        <app-summary-metric
+          label="Registered clients"
+          [value]="clients.length"
+        ></app-summary-metric>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <app-generic-list
+          [items]="clients"
+          icon="person-circle"
+          [linkPrefix]="'/detail-client'"
+        ></app-generic-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

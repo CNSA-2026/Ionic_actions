@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Products</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" fill="clear" (click)="logout()">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        Cerrar sesion
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed class="tab-page">
+    <ion-row>
+      <ion-col size="12">
+        <app-summary-metric
+          label="Available products"
+          [value]="products.length"
+        ></app-summary-metric>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <app-generic-list [items]="products" icon="pricetag"></app-generic-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
