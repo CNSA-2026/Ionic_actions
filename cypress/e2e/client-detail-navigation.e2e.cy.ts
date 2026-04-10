@@ -42,11 +42,18 @@ describe('Client Detail Navigation E2E', () => {
     cy.get('ion-card-subtitle').should('contain', 'Unknown');
   });
 
-  it('should have back button that returns to clients tab', () => {
+  it('should have back button that returns to clients tab with defaultHref', () => {
     cy.visit('http://localhost:8100/detail-client/1');
 
     // Back button should exist
     cy.get('ion-back-button').should('exist');
+
+    // Back button should exist with defaultHref
+    cy.get('ion-back-button').should(
+      'have.attr',
+      'defaultHref',
+      '/tabs/tabClients',
+    );
 
     // Click back button
     cy.get('ion-back-button').click();
@@ -55,19 +62,7 @@ describe('Client Detail Navigation E2E', () => {
     cy.url().should('include', '/tabs/tabClients');
   });
 
-  it('should use defaultHref when accessing detail page directly', () => {
-    // Access detail page directly (without navigation history)
-    cy.visit('http://localhost:8100/detail-client/5');
-
-    // Back button should exist with defaultHref
-    cy.get('ion-back-button').should(
-      'have.attr',
-      'defaultHref',
-      '/tabs/tabClients',
-    );
-  });
-
-  it('should display all client IDs correctly', () => {
+  it('should display all client IDs correctly and verify defaultHref', () => {
     const clients = [
       { id: '1', name: 'John Perez', tier: 'VIP' },
       { id: '2', name: 'Mary Garcia', tier: 'Frequent' },
@@ -81,6 +76,16 @@ describe('Client Detail Navigation E2E', () => {
       cy.get('ion-text.field-value').should('contain', client.id);
       cy.get('ion-card-title').should('contain', client.name);
       cy.get('ion-card-subtitle').should('contain', client.tier);
+      // Back button should exist with defaultHref
+      cy.get('ion-back-button').should(
+        'have.attr',
+        'defaultHref',
+        '/tabs/tabClients',
+      );
+      // Click back button
+      cy.get('ion-back-button').click();
+      // Should navigate back to clients
+      cy.url().should('include', '/tabs/tabClients');
     });
   });
 
