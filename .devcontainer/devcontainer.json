@@ -28,7 +28,6 @@
         "dbaeumer.vscode-eslint",
         "github.copilot",
         "github.copilot-chat",
-        "Webnative.webnative",
         "echoapi.echoapi-for-vscode"
       ],
       "settings": {

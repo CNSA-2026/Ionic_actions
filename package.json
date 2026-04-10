@@ -43,6 +43,7 @@
     "@angular/compiler-cli": "^20.3.18",
     "@angular/language-service": "^20.3.18",
     "@capacitor/cli": "8.1.0",
+    "@cypress/angular": "^4.1.0",
     "@ionic/angular-toolkit": "^12.0.0",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
