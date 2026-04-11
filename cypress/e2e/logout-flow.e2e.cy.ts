@@ -1,6 +1,6 @@
 describe('Logout Flow E2E', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8100/tabs/tabProducts');
+    cy.visit('http://localhost:8100/#/tabs/tabProducts');
   });
 
   it('should navigate to products tab', () => {
@@ -22,7 +22,7 @@ describe('Logout Flow E2E', () => {
   });
 
   it('should allow typing in login fields and clicking login button', () => {
-    cy.visit('http://localhost:8100/login');
+    cy.visit('http://localhost:8100/#/login');
     cy.get('ion-input[type="email"] input')
       .type('test@example.com')
       .should('have.value', 'test@example.com');
