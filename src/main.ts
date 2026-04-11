@@ -22,7 +22,6 @@ bootstrapApplication(AppComponent, {
       routes,
       withPreloading(PreloadAllModules),
       withComponentInputBinding(),
-      { useHash: true },
     ),
   ],
 });
