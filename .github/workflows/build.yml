@@ -34,7 +34,7 @@ jobs:
         run: npm run test:ci
 
       - name: Build
-        run: npm run build
+        run: npx @ionic/cli build --prod
 
       - name: Upload Artifacts (Build)
         uses: actions/upload-artifact@v7.0.1
@@ -62,7 +62,7 @@ jobs:
       - name: E2E Tests (Cypress) 🧪
         uses: cypress-io/github-action@v7.1.9
         with:
-          start: npm start
+          start: npx @ionic/cli serve
           wait-on: "http://localhost:8100"
           browser: chrome
 
@@ -105,7 +105,7 @@ jobs:
           reporter: java-junit
 
       - name: Build
-        run: npx ng build --configuration=production --base-href /${{ github.event.repository.name }}/
+        run: npx @ionic/cli build --prod -- --base-href /${{ github.event.repository.name }}/
 
       - name: Deploy to GitHub Pages 🚀
         if: github.ref == 'refs/heads/main'
