@@ -76,14 +76,16 @@ describe('Client Detail Navigation E2E', () => {
       cy.get('ion-text.field-value').should('contain', client.id);
       cy.get('ion-card-title').should('contain', client.name);
       cy.get('ion-card-subtitle').should('contain', client.tier);
-      // Back button should exist with defaultHref
-      cy.get('ion-back-button').should(
+      // Back button should exist with defaultHref (select only the visible/first one)
+      cy.get('ion-toolbar ion-buttons[slot="start"] ion-back-button').should(
         'have.attr',
         'defaultHref',
         '/tabs/tabClients',
       );
-      // Click back button
-      cy.get('ion-back-button').click();
+      // Click only the visible/first back button
+      cy.get('ion-toolbar ion-buttons[slot="start"] ion-back-button')
+        .first()
+        .click();
       // Should navigate back to clients
       cy.url().should('include', '/tabs/tabClients');
     });
