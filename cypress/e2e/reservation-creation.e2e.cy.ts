@@ -1,6 +1,6 @@
 describe('Reservation Creation E2E', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8100/tabs/tabReservations');
+    cy.visit('http://localhost:8100/#/tabs/tabReservations');
   });
 
   it('should navigate from reservations tab to create reservation page', () => {
@@ -15,21 +15,21 @@ describe('Reservation Creation E2E', () => {
   });
 
   it('should display create reservation page with correct title', () => {
-    cy.visit('http://localhost:8100/create-reservation');
+    cy.visit('http://localhost:8100/#/create-reservation');
 
     // Should display correct title
     cy.get('ion-title').should('contain', 'Create Reservation');
   });
 
   it('should display form inputs on create reservation page', () => {
-    cy.visit('http://localhost:8100/create-reservation');
+    cy.visit('http://localhost:8100/#/create-reservation');
 
     // Should have form inputs
     cy.get('ion-input').should('have.length.greaterThan', 0);
   });
 
   it('should have form fields with placeholder text', () => {
-    cy.visit('http://localhost:8100/create-reservation');
+    cy.visit('http://localhost:8100/#/create-reservation');
 
     // Should have various input fields
     cy.get('ion-input[placeholder="Client full name"]').should('exist');
@@ -37,7 +37,7 @@ describe('Reservation Creation E2E', () => {
   });
 
   it('should maintain form data visibility', () => {
-    cy.visit('http://localhost:8100/create-reservation');
+    cy.visit('http://localhost:8100/#/create-reservation');
 
     // Check that form card is visible
     cy.get('ion-card').should('be.visible');
@@ -47,7 +47,7 @@ describe('Reservation Creation E2E', () => {
   });
 
   it('should fill the reservation form and go back with the lower back button', () => {
-    cy.visit('http://localhost:8100/create-reservation');
+    cy.visit('http://localhost:8100/#/create-reservation');
 
     // Rellenar nombre
     cy.get('ion-input[placeholder="Client full name"] input')
@@ -70,7 +70,7 @@ describe('Reservation Creation E2E', () => {
   });
 
   it('should navigate back to reservations tab when clicking back button with defaultHref', () => {
-    cy.visit('http://localhost:8100/create-reservation');
+    cy.visit('http://localhost:8100/#/create-reservation');
 
     // Click only the header back button (slot="start")
     cy.get('ion-toolbar ion-buttons[slot="start"] ion-back-button').click();
@@ -87,7 +87,7 @@ describe('Reservation Creation E2E', () => {
   });
 
   it('should go to create reservation and return with header back button', () => {
-    cy.visit('http://localhost:8100/tabs/tabReservations');
+    cy.visit('http://localhost:8100/#/tabs/tabReservations');
     // Click en el botón de crear reserva por el icono
 
     cy.get('ion-button')
