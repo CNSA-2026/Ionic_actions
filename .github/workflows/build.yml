@@ -32,7 +32,6 @@ jobs:
 
       - name: Test
         run: npm run test:ci
-        continue-on-error: true
 
       - name: Build
         run: npx ionic build --prod
@@ -66,7 +65,6 @@ jobs:
           start: npx ionic serve
           wait-on: "http://localhost:8100"
           browser: chrome
-        continue-on-error: true
 
       - name: Upload Cypress Screenshots/Videos
         if: failure()
@@ -107,7 +105,6 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
           report-json: "eslint-result.json"
-        continue-on-error: true
 
       - name: Test Report
         uses: dorny/test-reporter@v3.0.0
@@ -116,7 +113,6 @@ jobs:
           name: Karma Tests
           path: "test.results.xml"
           reporter: java-junit
-        continue-on-error: true
 
       # Utilizando npm en lugar de npx ionic para evitar de que no encontraba angular/cli
       - name: Build

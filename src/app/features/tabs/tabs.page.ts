@@ -21,7 +21,5 @@ export class TabsPage {
 
   constructor() {
     addIcons({ people, calendarNumber, pricetags });
-    // Provocar error seguro de lint: uso de console.log
-    console.log('Esto provocará un error de lint');
   }
 }
