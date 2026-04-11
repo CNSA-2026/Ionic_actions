@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: dorny/test-reporter@v3.0.0
         with:
-          artifact: test-results
+          artifact: test-report
           name: Karma Tests
           path: "test.results.xml"
           reporter: java-junit
