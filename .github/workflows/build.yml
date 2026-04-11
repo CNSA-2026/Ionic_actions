@@ -49,6 +49,13 @@ jobs:
           name: test-results
           path: coverage/test.results.xml
 
+      - name: Upload ESLint Report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: eslint-report
+          path: coverage/eslint-result.json
+
       #.Resultado de la ejecución del workflow de Ionic
       #image::github-action-ionic-test.png[role="thumb", align="center"]
 
@@ -81,6 +88,11 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           name: test-results
+
+      - name: Download ESLint Report
+        uses: actions/download-artifact@v7
+        with:
+          name: eslint-report
 
       - name: Annotate Code Linting Results
         uses: ataylorme/eslint-annotate-action@v4
