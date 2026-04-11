@@ -26,8 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Ensure @angular/cli is installed
-        run: npm install -D -E @angular/cli
+      - name: Install @angular/cli globally
+        run: npm install -g @angular/cli
 
       - name: Save Code Linting Report JSON
         run: npm run lint:json
