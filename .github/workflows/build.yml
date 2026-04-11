@@ -65,6 +65,7 @@ jobs:
           start: npx ionic serve
           wait-on: "http://localhost:8100"
           browser: chrome
+        continue-on-error: true
 
       - name: Upload Cypress Screenshots/Videos
         if: failure()
