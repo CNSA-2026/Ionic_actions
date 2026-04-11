@@ -9,6 +9,7 @@
     "build": "ionic build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:ci": "ng test",
     "lint": "ng lint",
     "lint:json": "ng lint --format json > lint-report.json"
   },
