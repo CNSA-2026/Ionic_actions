@@ -16,7 +16,7 @@ import { people, calendarNumber, pricetags } from 'ionicons/icons';
   //Imports de etiquetas html standalone de ionic
   imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
 })
-export class TabsPage {
+export class Tabs {
   public environmentInjector = inject(EnvironmentInjector);
 
   constructor() {

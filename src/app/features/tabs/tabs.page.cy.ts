@@ -22,7 +22,7 @@ describe('TabsPage Component', () => {
       imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
     });
 
-    cy.get('ion-tab-button').should('have.length', 3);
+    cy.get('ion-tab-button').should('have.length', 4);
   });
 
   it('should render all tab buttons with correct icons and labels', () => {
