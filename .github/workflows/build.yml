@@ -26,9 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install @angular/cli globally
-        run: npm install -g @angular/cli
-
       - name: Save Code Linting Report JSON
         run: npm run lint:json
         continue-on-error: true
@@ -37,7 +34,7 @@ jobs:
         run: npm run test:ci
 
       - name: Build
-        run: npx ionic build --prod
+        run: npm run build
 
       - name: Upload Artifacts (Build)
         uses: actions/upload-artifact@v7.0.1
@@ -65,7 +62,7 @@ jobs:
       - name: E2E Tests (Cypress) 🧪
         uses: cypress-io/github-action@v7.1.9
         with:
-          start: npx ionic serve
+          start: npm start
           wait-on: "http://localhost:8100"
           browser: chrome
 
@@ -108,7 +105,7 @@ jobs:
           reporter: java-junit
 
       - name: Build
-        run: npx ionic build --prod -- --base-href /${{ github.event.repository.name }}/
+        run: npx ng build --configuration=production --base-href /${{ github.event.repository.name }}/
 
       - name: Deploy to GitHub Pages 🚀
         if: github.ref == 'refs/heads/main'
