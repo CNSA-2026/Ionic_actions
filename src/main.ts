@@ -5,6 +5,7 @@ import {
   withPreloading,
   PreloadAllModules,
   withComponentInputBinding,
+  withHashLocation,
 } from '@angular/router';
 import {
   IonicRouteStrategy,
@@ -22,6 +23,7 @@ bootstrapApplication(AppComponent, {
       routes,
       withPreloading(PreloadAllModules),
       withComponentInputBinding(),
+      withHashLocation(),
     ),
   ],
 });
