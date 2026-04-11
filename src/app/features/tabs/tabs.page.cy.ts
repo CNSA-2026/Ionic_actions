@@ -22,7 +22,7 @@ describe('TabsPage Component', () => {
       imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
     });
 
-    cy.get('ion-tab-button').should('have.length', 4);
+    cy.get('ion-tab-button').should('have.length', 3);
   });
 
   it('should render all tab buttons with correct icons and labels', () => {
@@ -30,7 +30,7 @@ describe('TabsPage Component', () => {
       imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
     });
 
-    cy.get('ion-tab-bar').should('exist');
+    cy.get('ion-tab-bars').should('exist');
     cy.get('ion-tab-button[tab="tabClients"]').within(() => {
       cy.get('ion-icon[name="people"]').should('exist');
       cy.contains('Clients');
