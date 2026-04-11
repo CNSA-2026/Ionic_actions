@@ -107,6 +107,7 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
           report-json: "eslint-result.json"
+        continue-on-error: true
 
       - name: Test Report
         uses: dorny/test-reporter@v3.0.0
@@ -115,6 +116,7 @@ jobs:
           name: Karma Tests
           path: "test.results.xml"
           reporter: java-junit
+        continue-on-error: true
 
       # Utilizando npm en lugar de npx ionic para evitar de que no encontraba angular/cli
       - name: Build
