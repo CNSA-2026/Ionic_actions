@@ -87,7 +87,7 @@ jobs:
       - name: Download Reports
         uses: actions/download-artifact@v8.0.1
         with:
-          pattern: "test-report|eslint-report"
+          pattern: "*-report"
           merge-multiple: true
 
       - name: Annotate Code Linting Results
