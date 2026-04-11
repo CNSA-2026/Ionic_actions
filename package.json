@@ -12,7 +12,7 @@
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
-    "lint:json": "ng lint --format json > lint-report.json"
+    "lint:json": "eslint . -f json -o coverage/eslint-result.json"
   },
   "private": true,
   "dependencies": {
