@@ -42,11 +42,11 @@ jobs:
           name: www
           path: www/
 
-      - name: Upload Test Results
+      - name: Upload Test Report
         if: always()
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: test-results
+          name: test-report
           path: coverage/test.results.xml
 
       - name: Upload ESLint Report
@@ -84,15 +84,11 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v6.0.2
-      - name: Download Artifacts
+      - name: Download Reports
         uses: actions/download-artifact@v8.0.1
         with:
-          name: test-results
-
-      - name: Download ESLint Report
-        uses: actions/download-artifact@v8.0.1
-        with:
-          name: eslint-report
+          pattern: "test-report|eslint-report"
+          merge-multiple: true
 
       - name: Annotate Code Linting Results
         uses: ataylorme/eslint-annotate-action@v4
@@ -103,7 +99,7 @@ jobs:
       - name: Test Report
         uses: dorny/test-reporter@v3.0.0
         with:
-          artifact: test-results
+          artifact: test-report
           name: Karma Tests
           path: "test.results.xml"
           reporter: java-junit
