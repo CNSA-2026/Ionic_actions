@@ -98,7 +98,7 @@ jobs:
         uses: ataylorme/eslint-annotate-action@v4
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-          report-json: "eslint-report/eslint-result.json"
+          report-json: "coverage/eslint-result.json"
 
       - name: Test Report
         uses: dorny/test-reporter@v3.0.0
