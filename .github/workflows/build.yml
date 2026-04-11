@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: eslint-report
-          path: coverage/eslint-result.json
+          path: coverage/
 
       #.Resultado de la ejecución del workflow de Ionic
       #image::github-action-ionic-test.png[role="thumb", align="center"]
