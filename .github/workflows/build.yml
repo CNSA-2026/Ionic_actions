@@ -84,15 +84,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v6.0.2
-      - name: Download Artifacts
+      - name: Download Test Results & ESLint Report
         uses: actions/download-artifact@v7
         with:
-          name: test-results
-
-      - name: Download ESLint Report
-        uses: actions/download-artifact@v7
-        with:
-          name: eslint-report
+          pattern: "test-results|eslint-report"
 
       - name: Annotate Code Linting Results
         uses: ataylorme/eslint-annotate-action@v4
