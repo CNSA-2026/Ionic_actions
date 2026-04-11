@@ -10,7 +10,7 @@
     "build": "ionic build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
+    "test:ci": "mkdir -p coverage && ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "lint:json": "eslint . -f json -o coverage/eslint-result.json"
   },
