@@ -105,7 +105,7 @@ jobs:
           reporter: java-junit
 
       - name: Build
-        run: npx ionic build --prod -- --base-href /${{ github.event.repository.name }}/
+        run: npm run build -- -- --base-href /${{ github.event.repository.name }}/
 
       - name: Deploy to GitHub Pages 🚀
         if: github.ref == 'refs/heads/main'
