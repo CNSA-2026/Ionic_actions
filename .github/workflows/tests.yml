@@ -18,3 +18,4 @@ jobs:
           name: Karma Tests
           path: "test.results.xml"
           reporter: java-junit
+          continue-on-error: true

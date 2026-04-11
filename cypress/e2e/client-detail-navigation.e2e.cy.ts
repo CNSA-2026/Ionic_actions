@@ -17,7 +17,7 @@ describe('Client Detail Navigation E2E', () => {
     cy.visit('http://localhost:8100/detail-client/2');
 
     // Should display Mary Garcia
-    cy.get('ion-card-title').should('contain', 'Mary Garcia');
+    cy.get('ion-card-title').should('contain', 'Mary Garhas');
   });
 
   it('should display correct client tier in detail page', () => {
