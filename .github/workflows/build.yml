@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: eslint-report
-          path: coverage/
+          path: coverage/eslint-result.json
 
       #.Resultado de la ejecución del workflow de Ionic
       #image::github-action-ionic-test.png[role="thumb", align="center"]
@@ -98,7 +98,7 @@ jobs:
         uses: ataylorme/eslint-annotate-action@v4
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-          report-json: "coverage/eslint-result.json"
+          report-json: "eslint-report/eslint-result.json"
 
       - name: Test Report
         uses: dorny/test-reporter@v3.0.0
