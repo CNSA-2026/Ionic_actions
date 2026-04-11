@@ -27,7 +27,7 @@ describe('TabsPage', () => {
 
   it('should render three tab buttons with correct tabs', () => {
     const tabButtons = fixture.debugElement.queryAll(By.css('ion-tab-button'));
-    expect(tabButtons.length).toBe(3);
+    expect(tabButtons.length).toBe(4);
   });
 
   it('should render Clients tab with people icon and correct text', async () => {
