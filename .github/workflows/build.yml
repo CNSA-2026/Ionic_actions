@@ -62,7 +62,7 @@ jobs:
       - name: E2E Tests (Cypress) 🧪
         uses: cypress-io/github-action@v7.1.9
         with:
-          start: ./node_modules/.bin/ionic serve
+          start: npm start
           wait-on: "http://localhost:8100"
           browser: chrome
 
