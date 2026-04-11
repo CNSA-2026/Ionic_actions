@@ -23,6 +23,7 @@ bootstrapApplication(AppComponent, {
       routes,
       withPreloading(PreloadAllModules),
       withComponentInputBinding(),
+      //  todo lo que está después del # no es enviado al servidor, sino que es manejado solo por el navegador y el framework.
       withHashLocation(),
     ),
   ],
