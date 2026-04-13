@@ -31,6 +31,7 @@ describe('Logout Flow E2E', () => {
       .should('have.value', 'password123');
     cy.get('ion-button').contains('Log In').click();
     // No redirección ni error esperado, solo interacción
+    cy.url().should('include', '/tabs/tabReservations');
   });
 
   it('should have logout button with correct styling/visibility', () => {
