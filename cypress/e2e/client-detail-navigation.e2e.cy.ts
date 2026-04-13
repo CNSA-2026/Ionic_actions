@@ -1,6 +1,6 @@
 describe('Client Detail Navigation E2E', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8100/tabs/tabClients');
+    cy.visit('http://localhost:8100/#/tabs/tabClients');
   });
 
   it('should navigate from clients list to client detail with correct ID', () => {
@@ -14,7 +14,7 @@ describe('Client Detail Navigation E2E', () => {
 
   it('should display correct client name in detail page', () => {
     // Navigate to client 2 (Mary Garcia)
-    cy.visit('http://localhost:8100/detail-client/2');
+    cy.visit('http://localhost:8100/#/detail-client/2');
 
     // Should display Mary Garcia
     cy.get('ion-card-title').should('contain', 'Mary Garcia');
@@ -22,7 +22,7 @@ describe('Client Detail Navigation E2E', () => {
 
   it('should display correct client tier in detail page', () => {
     // Navigate to client 1 (John Perez - VIP)
-    cy.visit('http://localhost:8100/detail-client/1');
+    cy.visit('http://localhost:8100/#/detail-client/1');
 
     // Should display VIP tier
     cy.get('ion-card-subtitle').should('contain', 'VIP');
@@ -30,20 +30,20 @@ describe('Client Detail Navigation E2E', () => {
 
   it('should display correct data for each client ID', () => {
     // Test client 3 (Tech Solutions Company - Corporate)
-    cy.visit('http://localhost:8100/detail-client/3');
+    cy.visit('http://localhost:8100/#/detail-client/3');
     cy.get('ion-card-title').should('contain', 'Tech Solutions Company');
     cy.get('ion-card-subtitle').should('contain', 'Corporate');
   });
 
   it('should display unknown client for invalid ID', () => {
-    cy.visit('http://localhost:8100/detail-client/999');
+    cy.visit('http://localhost:8100/#/detail-client/999');
 
     cy.get('ion-card-title').should('contain', 'Client not found');
     cy.get('ion-card-subtitle').should('contain', 'Unknown');
   });
 
   it('should have back button that returns to clients tab with defaultHref', () => {
-    cy.visit('http://localhost:8100/detail-client/1');
+    cy.visit('http://localhost:8100/#/detail-client/1');
 
     // Back button should exist
     cy.get('ion-back-button').should('exist');
@@ -72,18 +72,20 @@ describe('Client Detail Navigation E2E', () => {
     ];
 
     clients.forEach((client) => {
-      cy.visit(`http://localhost:8100/detail-client/${client.id}`);
+      cy.visit(`http://localhost:8100/#/detail-client/${client.id}`);
       cy.get('ion-text.field-value').should('contain', client.id);
       cy.get('ion-card-title').should('contain', client.name);
       cy.get('ion-card-subtitle').should('contain', client.tier);
-      // Back button should exist with defaultHref
-      cy.get('ion-back-button').should(
+      // Back button should exist with defaultHref (select only the visible/first one)
+      cy.get('ion-toolbar ion-buttons[slot="start"] ion-back-button').should(
         'have.attr',
         'defaultHref',
         '/tabs/tabClients',
       );
-      // Click back button
-      cy.get('ion-back-button').click();
+      // Click only the visible/first back button
+      cy.get('ion-toolbar ion-buttons[slot="start"] ion-back-button')
+        .first()
+        .click();
       // Should navigate back to clients
       cy.url().should('include', '/tabs/tabClients');
     });
@@ -98,7 +100,7 @@ describe('Client Detail Navigation E2E', () => {
       { id: '5', name: 'Global Inc.', tier: 'International' },
     ];
 
-    cy.visit('http://localhost:8100/tabs/tabClients');
+    cy.visit('http://localhost:8100/#/tabs/tabClients');
 
     clients.forEach((client, idx) => {
       // Click on the client item by index
@@ -113,7 +115,7 @@ describe('Client Detail Navigation E2E', () => {
         '/tabs/tabClients',
       );
       // Vuelve atrás
-      cy.get('ion-back-button').click();
+      cy.get('ion-toolbar ion-buttons[slot="start"] ion-back-button').click();
       // Espera a que la lista esté visible de nuevo
       cy.url().should('include', '/tabs/tabClients');
     });

@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "myApp",
   "version": "0.0.1",
   "author": "Ionic Framework",
@@ -9,7 +10,9 @@
     "build": "ionic build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
+    "lint": "ng lint",
+    "lint:json": "mkdir -p coverage && eslint . -f json -o coverage/eslint-result.json"
   },
   "private": true,
   "dependencies": {
@@ -38,13 +41,14 @@
     "@angular-eslint/eslint-plugin-template": "^20.3.18",
     "@angular-eslint/schematics": "^20.3.18",
     "@angular-eslint/template-parser": "^20.3.18",
-    "@angular/cli": "^20.3.18",
+    "@angular/cli": "20.3.23",
     "@angular/compiler": "^20.3.18",
     "@angular/compiler-cli": "^20.3.18",
     "@angular/language-service": "^20.3.18",
     "@capacitor/cli": "8.1.0",
     "@cypress/angular": "^4.1.0",
     "@ionic/angular-toolkit": "^12.0.0",
+    "@ionic/cli": "^7.2.1",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
@@ -60,7 +64,16 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "karma-junit-reporter": "^2.0.1",
+    "tar": "^7.5.13",
     "typescript": "~5.9.0"
+  },
+  "overrides": {
+    "tar": "^7.5.13",
+    "@ionic/cli-framework-prompts": {
+      "enquirer": "^2.4.1",
+      "tmp": "^0.2.5"
+    }
   },
   "description": "An Ionic project"
 }
